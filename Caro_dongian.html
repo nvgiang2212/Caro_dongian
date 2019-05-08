@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tao ban co Caro don gian</title>
+	<style>
+		body {text-align: center;}
+	</style>
+</head>
+<body>
+	<h1>Caro Game Simple</h1>
+	<hr>
+	<p id="carogame"></p>
+	<input type="button" value="Change Value" onclick="changeValue()">
+
+	<script>
+		// Hiển thị bàn cờ
+		let b = document.getElementById('carogame');
+		let board = [];
+		let data = "";
+		for (let i = 0; i<8; i++) {
+			board[i] = [0, 0, 0, 0, 0, 0, 0, 0];
+		}
+		for (let i = 0; i<8; i++) {
+			data += "<br>";
+			for (let j = 0; j<8; j++) {
+				data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+			}
+		}
+		b.innerHTML = data;
+
+		// Xử lý sự kiện khi click vào Change Value
+		function changeValue() {
+			let positionX = prompt("X : ");
+			let positionY = prompt("Y : ");
+			data = "";
+			board[positionX][positionY] = "x";
+
+			for (let i=0; i<8; i++) {
+				data += "<br>";
+				for (let j=0; j<8; j++) {
+					data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+			}
+			b.innerHTML = data;
+		}
+	</script>
+</body>
+</html>
