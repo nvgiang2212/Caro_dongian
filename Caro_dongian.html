@@ -15,19 +15,24 @@
 
 	<script>
 		// Hiển thị bàn cờ
-		let b = document.getElementById('carogame');
+		// Khởi tạo mảng board
 		let board = [];
+		// Khởi tạo biến data, và gán gái trị là chuỗi rỗng để chuyển các phần tử trong mảng sang kiểu chuỗi khi hiển thị ra
 		let data = "";
+		// Vòng lặp for để gán giá trị 0 cho từng vị trí trong mảng
 		for (let i = 0; i<8; i++) {
 			board[i] = [0, 0, 0, 0, 0, 0, 0, 0];
 		}
+		// Vòng lặp i= 0->8
 		for (let i = 0; i<8; i++) {
+			// Xuống dòng sau khi xong board[0][7], board[1][7],...
 			data += "<br>";
+			// Vòng lặp j= 0->8 để chuyển các giá trị trong mảng sang kiểu chuỗi
 			for (let j = 0; j<8; j++) {
 				data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
 			}
 		}
-		b.innerHTML = data;
+		document.getElementById('carogame').innerHTML = data;
 
 		// Xử lý sự kiện khi click vào Change Value
 		function changeValue() {
@@ -42,7 +47,7 @@
 					data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
 				}
 			}
-			b.innerHTML = data;
+			document.getElementById('carogame').innerHTML = data;
 		}
 	</script>
 </body>
